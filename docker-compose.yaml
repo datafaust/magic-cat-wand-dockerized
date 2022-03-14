@@ -15,9 +15,8 @@ services:
       - 80:80
       - 443:443
       - 2015:2015
-
   mcw:
-    image: faust-radio
+    image: mcw
     #restart: no
     container_name: mc
     build: ./
