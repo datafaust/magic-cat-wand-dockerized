@@ -9,10 +9,12 @@ RUN apt-get update \
         make \
         wget
 
-COPY flask_app/requirements.txt ./
+COPY requirements.txt ./
 RUN pip install -r requirements.txt
 #ADD . /flask_app
-#WORKDIR /flask_app
+#WORKDIR /
+
+COPY . /
 
 ENTRYPOINT [ "python" ]
 
