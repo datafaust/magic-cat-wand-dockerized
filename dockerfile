@@ -11,7 +11,8 @@ RUN apt-get update \
 
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
+WORKDIR /
 
 ENTRYPOINT [ "python" ]
 
-CMD [ "./app.py" ]
+CMD [ "app.py" ]
