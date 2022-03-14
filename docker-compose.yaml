@@ -17,7 +17,7 @@ services:
   mcw:
     image: mcw
     #restart: no
-    container_name: mc
+    container_name: mcw
     build: ./
     ports:
       - 5000:5000
