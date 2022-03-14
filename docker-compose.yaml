@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+
+  caddy:
+    container_name: caddy
+    image: abdulsalamdocker/caddy:1.0.3-no-stats
+    restart: unless-stopped
+    env_file:
+      - ./env/caddy.env
+    volumes:
+      - ./Caddyfile:/etc/Caddyfile:ro
+      - $HOME/.caddy:/root/.caddy
+    ports:
+      - 80:80
+      - 443:443
+      - 2015:2015
+
+  mcw:
+    image: faust-radio
+    #restart: no
+    container_name: mc
+    build: ./
+    ports:
+      - 5000:5000
+
+working_dir: 
+networks:
+  default:
+    external:
+      name: my-net-pi
+      
