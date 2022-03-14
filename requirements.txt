@@ -1,6 +1,0 @@
-flask
-werkzeug
-flask_cors
-gpiozero
-flask_restful
-imutils

@@ -17,6 +17,8 @@ services:
   mcw:
     image: mcw
     #restart: no
+    volumes: 
+      - ./flask_app:/flask_app
     container_name: mcw
     build: ./
     ports:
