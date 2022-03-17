@@ -1,24 +1,8 @@
 version: "3.7"
 
 services:
-  caddy:
-    container_name: caddy
-    image: abdulsalamdocker/caddy:1.0.3-no-stats
-    restart: unless-stopped
-    env_file:
-      - ./env/caddy.env
-    volumes:
-      - ./Caddyfile:/etc/Caddyfile:ro
-      - $HOME/.caddy:/root/.caddy
-    ports:
-      - 80:80
-      - 443:443
-      - 2015:2015
   mcw:
     image: mcw
-    #restart: no
-    #volumes: 
-    #  - ./flask_app:/flask_app
     container_name: mcw
     build: ./flask_app
     ports:
@@ -27,4 +11,4 @@ services:
 networks:
   default:
     external:
-      name: my-net-pi
+      name: my-network-pi

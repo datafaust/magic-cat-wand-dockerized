@@ -40,7 +40,8 @@ def advancedServo():
 
 @app.route('/')
 def root():
-    return 'Started a background process with PID ' + str(backProc.pid) + " is running: " + str(backProc.is_alive())
+    #return 'Started a background process with PID ' + str(backProc.pid) + " is running: " + str(backProc.is_alive())
+    return 'Welcome to the magic cat wand api!'
 
 @app.route("/amiconnected", methods=['GET', 'POST'])
 def test_connection():
