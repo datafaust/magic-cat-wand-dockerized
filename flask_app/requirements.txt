@@ -4,4 +4,4 @@ flask_cors
 gpiozero
 flask_restful
 imutils
-RPIO
+RPi.GPIO
