@@ -38,10 +38,10 @@ def advancedServo():
         time.sleep(3)
         print('3 Seconds Later')
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def root():
-    #return 'Started a background process with PID ' + str(backProc.pid) + " is running: " + str(backProc.is_alive())
-    return 'Welcome to the magic cat wand api!'
+    response = {'connection_status': 'connected'}
+    return make_response(jsonify(response),201)
 
 @app.route("/amiconnected", methods=['GET', 'POST'])
 def test_connection():
@@ -80,6 +80,12 @@ def start():
     backProc.start()
     response = { 'job_status' : 'started ','job_type': mode,  'job_pid' : str(backProc.pid) }
     return make_response(jsonify(response),201)   
+
+@app.route('/start_camera', methods = ['GET', 'POST'])
+def start_camera():
+    response = { 'camera_status' : 'started ' }
+    return make_response(jsonify(response),201)
+        
 
 if __name__ == '__main__':
     app.secret_key = os.urandom(24)

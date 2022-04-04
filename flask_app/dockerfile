@@ -7,8 +7,8 @@ RUN apt-get update \
         build-essential \
         git \
         make \
-        wget \
-        rpi.gpio
+        wget 
+        #\rpi.gpio
 
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
